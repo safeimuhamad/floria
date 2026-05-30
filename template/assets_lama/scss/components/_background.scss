@@ -1,0 +1,21 @@
+@use '../utils' as *;
+/*----------------------------------------*/
+/*  BACKGROUND CSS START
+/*----------------------------------------*/
+
+.grey-bg {
+	background: var(--cl-color-grey-1);
+}
+.grey-bg-2 {
+	background: var(--cl-color-grey-2);
+}
+
+.white-bg {
+	background: var(--cl-color-white);
+}
+
+.black-bg {
+	background: var(--cl-color-black);
+}
+
+

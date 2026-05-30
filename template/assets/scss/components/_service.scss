@@ -1,0 +1,658 @@
+@use "../utils" as *;
+/*----------------------------------------*/
+/* SERVICE CSS START
+/*----------------------------------------*/
+.cl-service-block {
+  position: relative;
+  z-index: 1;
+  padding-top: 40px;
+  padding-bottom: 0px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  @media screen and (min-width: 768px) {
+    padding-top: 80px;
+  }
+  @media screen and (min-width: 1200px) {
+    padding-top: 120px;
+    padding-bottom: 10px;
+  }
+  /* Shape 1 */
+  &__shape-1 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: 18.8%;
+    &:hover {
+      pointer-events: none;
+    }
+    &--style-2 {
+      left: 5%;
+      top: 5%;
+      width: 12.4%;
+    }
+    &--style-3 {
+      left: 6%;
+      top: 14%;
+      width: 7.6%;
+    }
+  }
+  .cl-btn-sv {
+    margin-top: 10px;
+  }
+  /* == Section Title == */
+  .section-title-block {
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    @media (min-width: 768px) {
+      margin-bottom: 60px;
+      flex-wrap: wrap;
+    }
+    &__text {
+      margin-bottom: 20px;
+      max-width: 400px;
+      margin: 0 auto;
+      @media (min-width: 992px) {
+        width: 100%;
+      }
+      @media (min-width: 1200px) {
+        width: 100%;
+      }
+      @media (min-width: 1400px) {
+        margin: 0;
+        max-width: 420px;
+      }
+    }
+    &__middle {
+      @media (max-width: 992px) {
+        display: none;
+      }
+    }
+  }
+  /* == Services Block Cards == */
+  &__cards {
+    padding-bottom: 45px;
+    @media screen and (min-width: 768px) {
+      padding-bottom: 65px;
+    }
+    @include breakpoint(large) {
+      padding-bottom: 85px;
+    }
+    &--style-3 {
+      padding-bottom: 5px;
+      @media screen and (min-width: 768px) {
+        padding-bottom: 25px;
+      }
+      @media screen and (min-width: 1200px) {
+        padding-bottom: 72px;
+      }
+    }
+  }
+  /* == Services Bottom Shape == */
+  .services-shape-bottom {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 250%;
+    @media (min-width: 992px) {
+      width: 100%;
+    }
+    img {
+      width: 100%;
+    }
+  }
+  /* == Services Block Card == */
+  &__card {
+    overflow: hidden;
+    padding: 15px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+    transition: 0.3s all ease-in-out;
+    @media (min-width: 574px) {
+      margin-bottom: 30px;
+    }
+    @include breakpoint(large) {
+      padding: 15px;
+    }
+    @include breakpoint(xl) {
+      padding: 30px;
+      padding-bottom: 35px;
+    }
+    &__image {
+      margin-bottom: 35px;
+      overflow: hidden;
+      height: 119px;
+      border-radius: 10px;
+      width: 100%;
+      display: block;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .cl-btn--circle {
+      height: 40px;
+      width: 40px;
+      min-width: inherit;
+      transition: all 0.3s ease-in-out;
+      &:hover {
+        background-color: var(--cl-color-white);
+        color: var(--cl-color-primary);
+      }
+      &--style-2 {
+        height: 38px;
+        width: 38px;
+        min-width: inherit;
+        @include breakpoint(large){
+          height: 57px;
+          width: 57px;
+        }
+        &::before {
+          border-color: var(--cl-color-primary);
+          background-color: var(--cl-color-bottle-green);
+        }
+        &:hover {
+          color: var(--cl-color-white);
+          background-color: var(--cl-color-white);
+          border-color: var(--cl-color-primary);
+        }
+      }
+    }
+    &__middle {
+      margin-bottom: 14px;
+      @media screen and (min-width: 575px) {
+        margin-bottom: 17px;
+      }
+      @media screen and (min-width: 992px) {
+        margin-bottom: 25px;
+      }
+    }
+    &__heading {
+      margin-bottom: 5px;
+      color: var(--cl-color-english-holly);
+      display: inline-block;
+      font-weight: 700;
+      transition: all 0.3s ease-in-out;
+      @include font-size(18px, 20px, 22px);
+      &:hover {
+        color: var(--cl-color-primary) !important;
+      }
+      @media screen and (min-width: 575px) {
+        margin-bottom: 10px;
+      }
+      @media screen and (min-width: 992px) {
+        margin-bottom: 17px;
+      }
+    }
+    &__text {
+      margin: 0;
+      @include font-size(14px, 16px);
+    }
+    &:hover {
+      background-color: var(--cl-color-bottle-green);
+      &__icon {
+        background: var(--cl-color-bottle-green);
+        svg {
+          path {
+            fill: var(--cl-color-primary);
+          }
+        }
+      }
+      .cl-service-block__card__heading,
+      .cl-service-block__card__text {
+        color: var(--cl-color-white);
+      }
+      .cl-btn--circle {
+        svg {
+          path {
+            stroke: var(--cl-color-primary);
+          }
+        }
+      }
+      .cl-service-block__shape {
+        svg {
+          path {
+            fill: var(--cl-color-primary);
+          }
+        }
+      }
+    }
+    /* == Services Style 2 == */
+    &--style-2 {
+      .cl-btn--circle {
+        height: 40px;
+        width: 40px;
+      }
+      &:hover {
+        background-color: var(--cl-color-bottle-green);
+        .cl-btn--circle {
+          color: var(--cl-color-primary);
+          background: var(--cl-color-white);
+        }
+        .cl-service-block__card__icon {
+          svg path {
+            fill: var(--cl-color-primary);
+          }
+        }
+      }
+      &:hover {
+        &__icon {
+          background: var(--cl-color-bottle-green);
+          svg {
+            path {
+              fill: var(--cl-color-primary);
+            }
+          }
+        }
+        h4,
+        p {
+          color: var(--cl-color-white);
+        }
+        .cl-btn--circle {
+          background-color: var(--cl-color-primary);
+          color: var(--cl-color-white);
+          svg {
+            path {
+              stroke: var(--cl-color-primary);
+            }
+          }
+        }
+        .cl-service-block__shape {
+          svg {
+            path {
+              fill: var(--cl-color-primary);
+            }
+          }
+        }
+      }
+    }
+  }
+  /* == Service Block Shape == */
+  &__shape {
+    position: absolute;
+    bottom: -70px;
+    right: -50px;
+    width: 171px;
+    height: 171px;
+    z-index: -1;
+  }
+  &--bg-transparent {
+    background: linear-gradient(
+      180deg,
+      var(--cl-color-alabaster) 0%,
+      rgba(235, 240, 231, 0) 100%
+    );
+  }
+  /* ======= Service Block Style 2 ======= */
+  &--style-2 {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    position: relative;
+    @media (min-width: 768px) {
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
+    @include breakpoint(large) {
+      padding-top: 120px;
+      padding-bottom: 120px;
+    }
+    &::before {
+      content: "";
+      background-image: url(../images/png/home-2/services-bg.png);
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 0;
+    }
+    &__shape-1 {
+      position: absolute;
+      left: 10%;
+      top: 120px;
+      width: 5.8%;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+      @media screen and (min-width: 320px) and (max-width: 767px) {
+        display: none;
+      }
+    }
+    .section-title-block {
+      &__heading {
+        max-width: 540px;
+        margin: 0 auto;
+        margin-bottom: 25px;
+        @media (min-width: 768px) {
+          margin-bottom: 50px;
+        }
+        @media (min-width: 992px) {
+          margin-bottom: 82px;
+        }
+      }
+    }
+    .cl-btn {
+      padding: 5px 17px;
+      height: 55px;
+      @include breakpoint(large){
+        padding: 5px 27px;
+        height: 60px;
+      }
+    }
+    /* Services Content List */
+    &__bottom {
+      position: relative;
+      margin-top: 10px;
+      @include breakpoint(large) {
+        margin-top: 60px;
+      }
+      .service-card__button {
+        .cl-btn {
+          background-color: var(--cl-color-white);
+          color: var(--cl-color-primary);
+          svg path {
+            fill: var(--cl-color-primary);
+          }
+          &:hover {
+            background-color: var(--cl-color-primary);
+            color: var(--cl-color-white);
+            svg path {
+              fill: var(--cl-color-white);
+            }
+          }
+        }
+      }
+      &__shape-2 {
+        position: absolute;
+        bottom: 15px;
+        right: 4%;
+        width: 63px;
+        height: auto;
+        img {
+          height: 100%;
+          width: 100%;
+        }
+        @media (min-width: 768px) {
+          bottom: 0px;
+          right: 13%;
+          width: 128px;
+        }
+        @media (min-width: 992px) {
+          bottom: 0px;
+          right: 16%;
+          width: 183px;
+        }
+      }
+    }
+  }
+}
+/* === Service Content ===  */
+.services {
+  .service-card {
+    padding: 30px 15px;
+    position: relative;
+    z-index: 1;
+    background-color: var(--cl-color-white);
+    border-radius: 10px;
+    transition: 0.4s;
+    overflow: hidden;
+    margin-bottom: 24px;
+    @include breakpoint(small) {
+      padding: 30px 25px;
+    }
+    @include breakpoint(large) {
+      margin: 0 10px;
+      margin-bottom: 24px;
+      padding: 63px 33px;
+    }
+    @include breakpoint(xxl) {
+      margin: 0 5px;
+      margin-bottom: 24px;
+    }
+    &__hover-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      visibility: hidden;
+      opacity: 0;
+      transition: 0.4s;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: var(--cl-color-primary);
+        border-radius: 10px;
+        opacity: 0.8;
+        transition: 0.4s;
+      }
+    }
+    &__title {
+      font-weight: var(--cl-fw-bold-1);
+      line-height: 26px;
+      text-align: center;
+      margin-bottom: 5px;
+      color: var(--cl-color-bottle-green);
+      @include font-size(18px, 20px, 22px);
+      @include breakpoint(large) {
+        margin-bottom: 15px;
+        line-height: 32px;
+      }
+    }
+    &__icon {
+      height: 90px;
+      width: 90px;
+      border-radius: 50%;
+      background-color: var(--cl-color-primary);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.3s all ease-in-out;
+      margin-bottom: 25px;
+      box-sizing: border-box;
+      padding: 2%;
+      @include breakpoint(large) {
+        height: 120px;
+        width: 120px;
+      }
+      @include breakpoint(xl) {
+        height: 150px;
+        width: 150px;
+      }
+      &__wrapper {
+        border: 2px dashed var(--cl-color-white);
+        border-radius: 50%;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.4s;
+      }
+      svg {
+        height: 40px;
+        transition: 0.3s all ease-in-out;
+        @include breakpoint(large) {
+          height: 50px;
+        }
+      }
+    }
+    &__text {
+      text-align: center;
+      font-style: normal;
+      font-weight: var(--cl-fw-text-1);
+      line-height: 28px;
+      margin-bottom: 25px;
+      @include font-size(14px, 16px);
+    }
+    &__button {
+      display: flex;
+      justify-content: center;
+      .cl-btn {
+        padding: 15px 17.3px;
+        height: 45px;
+        @include font-size(12px, 12px, 14px);
+        @media screen and (min-width: 576px){
+          padding: 10px 15px;
+          height: 40px;
+        }
+        @media screen and (min-width: 992px){
+          padding: 15px 17.3px;
+          height: 45px;
+        }
+      }
+    }
+    &:hover {
+      .service-card {
+        border-radius: 10px;
+        &__hover-img {
+          visibility: visible;
+          opacity: 1;
+        }
+        &__icon {
+          background-color: var(--cl-color-white);
+          &__wrapper {
+            border: 2px dashed var(--cl-color-primary);
+            svg path {
+              fill: var(--cl-color-primary);
+            }
+          }
+        }
+        &__title {
+          color: var(--cl-color-white);
+        }
+        &__text {
+          color: var(--cl-color-white);
+        }
+        &__button {
+          .cl-btn {
+            background-color: var(--cl-color-white);
+            color: var(--cl-color-primary);
+            svg path {
+              fill: var(--cl-color-primary);
+            }
+          }
+        }
+      }
+    }
+    .cl-btn--primary {
+      &:hover {
+        color: var(--cl-color-white) !important;
+        svg path {
+          fill: var(--cl-color-white) !important;
+        }
+      }
+    }
+  }
+}
+/* === Service Block Style 3 === */
+.cl-service-block__cards {
+  &--style-3 {
+    .cl-service-block__card {
+      filter: drop-shadow(0px 4px 30px rgba(2, 22, 9, 0.15));
+      margin-bottom: 36px;
+      padding: 0px;
+      border: none;
+      &__image {
+        display: block;
+        margin: 0;
+        height: 220px;
+        width: 300px;
+        border-radius: initial;
+        -webkit-mask-image: url(../../assets/images/png/home-3/image-mask.png);
+        mask-image: url(../../assets/images/png/home-3/image-mask.png);
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        mask-position: center;
+        mask-size: cover;
+        @media screen and (min-width: 480px) {
+          height: 300px;
+          width: 400px;
+        }
+        @media screen and (min-width: 574px) {
+          height: 160px;
+          width: 230px;
+        }
+        @media screen and (min-width: 767px) {
+          height: 220px;
+          width: 280px;
+        }
+        @media screen and (min-width: 1200px) {
+          height: 290px;
+          width: 350px;
+        }
+      }
+      &:hover {
+        background-color: var(--cl-color-primary);
+        .cl-btn--circle {
+          color: var(--cl-color-primary);
+          background: var(--cl-color-white);
+        }
+        .cl-service-block__card__icon {
+          svg path {
+            fill: var(--cl-color-white);
+          }
+        }
+      }
+    }
+    .cl-service-block__card__middle,
+    .cl-service-block__card__content {
+      padding: 0px 16px;
+    }
+    .cl-service-block__card__content {
+      padding: 0px 15px 20px 15px;
+      @include breakpoint(large){
+        padding: 0px 30px 20px 30px;
+      }
+    }
+    .cl-service-block__card__heading {
+      margin-bottom: 16px;
+      transition: all 0.3s ease-in-out;
+      &:hover {
+        color: var(--cl-color-bottle-green) !important;
+      }
+    }
+    .cl-service-block__card__middle {
+      @include breakpoint(large){
+        margin: 0px 16px 16px 16px;
+      }
+    }
+    .cl-btn--circle {
+      &:hover {
+        background-color: var(--cl-color-bottle-green) !important;
+        svg path {
+          stroke: var(--cl-color-white);
+        }
+      }
+    }
+  }
+}
+/* Inner Service */
+.inner-service {
+  .cl-service-block__cards {
+    padding-bottom: 25px;
+    @media screen and (min-width: 768px) {
+      padding-bottom: 45px;
+    }
+  }
+  .cl-service-block {
+    @include breakpoint(large) {
+      padding-bottom: 40px;
+    }
+  }
+}

@@ -1,0 +1,115 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  BREADCRUMB CSS START
+/*----------------------------------------*/
+
+.breadcrumb{
+    background-image: url('../../assets/images/jpg/breadcrumb/breadcrumb.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    margin-bottom: 0;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    text-align: center;
+    @include breakpoint(small){
+        text-align: left;
+    }
+    @include breakpoint(large){
+        padding-top: 120px;
+        padding-bottom: 120px;
+    }
+    &__title{
+        
+        color: var(--cl-color-white);
+        @include font-size(28px, 48px, 48px);
+        &-2{
+            font-size: 50px;
+            line-height: 1.1;
+            margin-top: 12px;
+            @media #{$sm}{
+                font-size: 40px;
+            }
+            @media #{$xs}{
+                font-size: 26px;
+            }
+        }
+        &-pre{
+            display: inline-block;
+            height: 24px;
+            line-height: 26px;
+            font-size: 14px;
+            color: #ffffff;
+            font-weight: 500;
+            background: var(--cl-color-primary);
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+            padding: 0 7px;
+            margin-bottom: 12px;
+        }
+    }
+    &__list{
+        & span{
+            font-size: 16px;
+            color: var(--cl-color-white);
+            font-weight: 500;
+            padding-right: 3px;
+            margin-right: 3px;
+            text-transform: capitalize;
+            i{
+                color: var(--cl-color-primary);
+                font-weight: bold;
+            }
+            & a{
+                &:hover{
+                    color: var(--cl-color-primary);
+                }
+            }
+        }
+        &-2{
+            & span{
+                font-size: 14px;
+                color: var(--cl-color-11);
+                font-weight: 500;
+                padding-right: 3px;
+                margin-right: 3px;
+                text-transform: capitalize;
+                & a{
+                    &:hover{
+                        color: var(--cl-color-primary);
+                    }
+                }
+            }
+        }
+    }
+    &__overlay{
+        position: relative;
+
+        &::after{
+            position: absolute;
+            content: "";
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, #09331B 0%, rgba(9, 51, 27, 0.00) 100%);
+        }
+    }
+    &__bottom-shape{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        width: 250%;
+        @media (min-width: 992px) {
+          width: 100%;
+        }
+        img {
+          width: 100%;
+        }
+        
+    }
+}

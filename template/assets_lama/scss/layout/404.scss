@@ -1,0 +1,46 @@
+@use '../utils' as *;
+/*----------------------------------------*/
+/*  404 CSS START
+/*----------------------------------------*/
+.cl-404-block{
+    padding-top: 40px;
+    padding-bottom: 40px;
+    @media screen and (min-width: 768px){
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    @media screen and (min-width: 1200px){
+        padding-top: 120px;
+        padding-bottom: 120px;
+    }
+    &__image{
+        img{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+    /* Content */
+    &__content{
+        max-width: 575px;
+        margin: auto;
+        &-title{
+            font-weight: var(--cl-fw-bold-1);
+            @include font-size(28px, 36px, 45px);
+        }
+        &-excerpt{
+            margin-bottom: 22px;
+            @include font-size(14px, 16px,18px);
+            @media screen and (min-width: 768px){
+                margin-bottom: 28px;
+            }
+            @media screen and (min-width: 992px){
+                margin-bottom: 32px;
+            }
+            @media screen and (min-width: 1200px){
+                margin-bottom: 40px;
+            }
+        }
+    }
+}

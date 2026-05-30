@@ -1,0 +1,67 @@
+
+@use "../utils" as *;
+/*----------------------------------------*/
+/*  WIDGETS CSS START
+/*----------------------------------------*/
+.widgets{
+    &--phone {
+        flex: 0 0 170px;
+        @include breakpoint(medium) {
+        }
+        @media (min-width: 1300px) {
+          flex: 0 0 180px;
+        }
+        @media (min-width: 1600px) {
+          flex: 0 0 217px;
+        }
+        img {
+          max-width: 30px;
+          flex: 0 0 30px;
+          object-fit: contain;
+          margin-right: 3px;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          @media (min-width: 768px) {
+            margin-right: 10px;
+          }
+          @include breakpoint(large) {
+            max-width: 40px;
+            flex: 0 0 40px;
+          }
+          @include breakpoint(xl) {
+            max-width: 50px;
+            flex: 0 0 50px;
+          }
+        }
+        &__content {
+          flex: 0 0 calc(100% - 50px);
+          max-width: calc(100% - 50px);
+          &__label {
+            margin-bottom: 0;
+            line-height: 1;
+            font-size: 14px;
+            font-weight: 400;
+            color: var(--cl-color-secondary);
+          }
+          &__number {
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 28px;
+            font-family: var(--cl-ff-heading);
+            color: var(--cl-color-primary);
+            transition: all .3s ease-in-out;
+            &:hover, &:focus{
+              color: var(--cl-color-secondary);
+            }
+            @include breakpoint(xl) {
+              font-size: 16px;
+            }
+            @media screen and (min-width: 1600px) {
+              font-size: 18px;
+            }
+          }
+        }
+      }
+}

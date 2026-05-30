@@ -1,0 +1,85 @@
+/*----------------------------------------*/
+/*  SEARCH MODAL CSS START
+/*----------------------------------------*/
+/* The Modal (background) */
+.search-modal {
+  opacity: 0;
+  visibility: hidden;
+  position: fixed; /* Stay in place */
+  z-index: 9999; /* Sit on top */
+  left: 0;
+  top: -100%;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background-color: rgba(0,0,0,0.6);  
+  backdrop-filter: blur(6px);
+  transition: top 0.6s, opacity 0.6s; 
+  
+  &.active {
+      opacity: 1;
+      visibility: visible;
+      top: 0;
+  }
+
+  &__content {
+      background-color: var(--cl-color-alabaster);
+      padding: 50px 20px;
+      width: 60%;
+      position: absolute;
+      top: 50%;
+      right: 50%;
+      transform: translate(50%, -50%);
+      border-radius: 8px;
+      display: flex;
+      
+      &.active {
+          opacity: 1;
+          top: 50%;
+      }
+
+      /* The Close Button */
+      &__close {
+          color: var(--cl-color-white);
+          font-size: 18px;
+          font-weight: bold;
+          position: absolute;
+          top: -10px;
+          right: -10px;
+          height: 30px;
+          width: 30px;
+          background-color: var(--cl-color-primary);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 50%;
+          transition: 0.3s;
+          
+          &:hover {
+              cursor: pointer;
+              background-color: var(--cl-color-secondary);
+          }
+      }
+
+      /* bottom shape */
+      &__shape-bottom {
+          position: absolute;
+          left: 0;
+          bottom: 0;
+      }
+
+      /* search-input */
+      .search-input {
+          width: 90%;
+          border: 1px solid var(--cl-color-white);
+          border-radius: 60px;
+          padding: 20px;
+          font-size: 24px;
+          margin: auto;
+          box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+          
+          &:focus {
+              border: 1px solid var(--cl-color-primary);
+          }
+      }
+  }
+}

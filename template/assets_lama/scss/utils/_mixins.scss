@@ -1,0 +1,378 @@
+// Media Queries
+@mixin breakpoint($size) {
+    @if $size == xsmall {
+        @media (min-width: 600px) {
+            @content;
+        }
+    } @else if $size == small {
+        @media (min-width: 768px) {
+            @content;
+        }
+    } @else if $size == medium {
+        @media (min-width: 992px) {
+            @content;
+        }
+    } @else if $size == large {
+        @media (min-width: 1200px) {
+            @content;
+        }
+    } @else if $size == xl {
+        @media (min-width: 1340px) {
+            @content;
+        }
+    } @else if $size == dl {
+        @media (min-width: 1440px) {
+            @content;
+        }
+    } @else if $size == xxl {
+        @media (min-width: 1600px) {
+            @content;
+        }
+    } @else if $size == xxxl {
+        @media (min-width: 1920px) {
+            @content;
+        }
+    }
+}
+
+
+// Font Size mixin using breakpoints
+
+@mixin font-size($mobile:16, $small: null, $medium: null, $large: null, $xl: null, $dl: null, $xxl: null, $xxxl: null) {
+    font-size: $mobile;
+  
+    @if $small {
+      @include breakpoint(small) {
+        font-size: $small;
+      }
+    }
+  
+    @if $medium {
+      @include breakpoint(medium) {
+        font-size: $medium;
+      }
+    }
+  
+    @if $large {
+      @include breakpoint(large) {
+        font-size: $large;
+      }
+    }
+  
+    @if $xl {
+      @include breakpoint(xl) {
+        font-size: $xl;
+      }
+    }
+  
+    @if $dl {
+      @include breakpoint(dl) {
+        font-size: $dl;
+      }
+    }
+  
+    @if $xxl {
+      @include breakpoint(xxl) {
+        font-size: $xxl;
+      }
+    }
+  
+    @if $xxxl {
+      @include breakpoint(xxxl) {
+        font-size: $xxxl;
+      }
+    }
+  }
+  
+
+
+
+
+    // bg color
+    @mixin bg-color($color, $opacity:1) {
+        background: rgba($color, $opacity);
+    }
+    
+
+    @mixin tp-afbf($style: 'default', $content: '', $top: 50%, $left: 0, $right: auto, $x:0%, $y:-50%, $height: 12px, $width:1px, $bg-color: var(--cl-black)) {
+        
+        @if ($style == 'center') {
+            $top:50%;
+            $left:50%;
+            $x:-50%;
+            $y:-50%;
+
+            position: absolute;
+            content: $content;
+            top: $top;
+            left: $left;
+            right: $right;
+            width: $width;
+            height: $height;
+            @include transform(translate($x, $y));
+            background-color: $bg-color;
+        }
+        @else if($style == 'full'){
+            $top:0%;
+            $left:0%;
+            $x:0%;
+            $y:0%;
+            $width:100%;
+            $height:100%;
+            
+            position: absolute;
+            content: $content;
+            top: $top;
+            left: $left;
+            right: $right;
+            width: $width;
+            height: $height;
+            @include transform(translate($x, $y));
+            background-color: $bg-color;
+        }
+
+        @else{
+            position: absolute;
+            content: $content;
+            top: $top;
+            left: $left;
+            right: $right;
+            width: $width;
+            height: $height;
+            @include transform(translate($x, $y));
+            background-color: $bg-color;
+        }
+    }
+    
+
+    // placeholder input
+    @mixin tp-placeholder {
+        &::-webkit-input-placeholder {
+            @content;
+        }
+        &:-moz-placeholder {
+            @content;
+        }
+        &::-moz-placeholder {
+            @content;
+        }
+        &:-ms-input-placeholder {
+            @content;
+        }
+    }
+
+    // animate 
+    @mixin animate($animation, $duration, $repeat, $easing) {
+        -webkit-animation: $animation $duration $repeat $easing;
+           -moz-animation: $animation $duration $repeat $easing;
+            -ms-animation: $animation $duration $repeat $easing;
+            -o-animation: $animation $duration $repeat $easing;
+                animation: $animation $duration $repeat $easing;
+    }
+
+    // filter 
+    @mixin filter($value) {
+        -webkit-filter: $value;
+            filter: $value;
+    }
+
+    // appearance for select
+    @mixin appearance($value) {
+        -webkit-appearance: $value;
+            -moz-appearance: $value;
+            -ms-appearance: $value;
+            -o-appearance: $value;
+            appearance: $value;
+    }
+    
+    // keyframes 
+    @mixin keyframes($name) {
+        @-webkit-keyframes #{$name} {
+            @content; 
+        }
+        @-moz-keyframes #{$name} {
+            @content;
+        }
+        @-ms-keyframes #{$name} {
+            @content;
+        }
+        @keyframes #{$name} {
+            @content;
+        } 
+    }
+
+    //backgroud 
+    @mixin background {
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+      
+    //transition
+    @mixin transition($time){
+        -webkit-transition: all $time ease-out 0s;
+        -moz-transition: all $time ease-out 0s;
+        -ms-transition: all $time ease-out 0s;
+        -o-transition: all $time ease-out 0s;
+        transition: all $time ease-out 0s;
+    }
+    
+    // transform
+    @mixin transform($transforms) {
+        -webkit-transform: $transforms;
+        -moz-transform: $transforms;
+        -ms-transform: $transforms;
+        -o-transform: $transforms;
+        transform: $transforms;
+    }
+    
+    //border
+    @mixin border-radius($man) {
+        -webkit-border-radius: $man;
+        -moz-border-radius: $man;
+        -o-border-radius: $man;
+        -ms-border-radius: $man;
+        border-radius: $man;
+    }
+    
+    // sentence case
+    @mixin sentence-case() {
+        text-transform: lowercase;
+        &:first-letter {
+            text-transform: uppercase;
+        }
+    }
+
+    // Flexbox display
+    @mixin flexbox() {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    }
+    
+    // Box shadows
+    @mixin box-shadow($shadow) {
+    -webkit-box-shadow: $shadow;
+        -moz-box-shadow: $shadow;       
+        -ms-box-shadow: $shadow;       
+        -o-box-shadow: $shadow;       
+            box-shadow: $shadow;
+    }
+    
+    // Section Heading
+    .section-pt-100{
+        padding-top: 100px;
+        @media screen and (min-width: 778px) and (max-width: 992px){
+            padding-top: 80px;
+        }
+        @media screen and (min-width: 320px) and (max-width: 767px){
+            padding-top: 60px;
+        }
+    }
+    .section-pb-100{
+        padding-bottom: 100px;
+        @media screen and (min-width: 778px) and (max-width: 992px){
+            padding-bottom: 80px;
+        }
+        @media screen and (min-width: 320px) and (max-width: 767px){
+            padding-bottom: 60px;
+        }
+    }
+    .section-pt-80{
+        padding-top: 80px;
+        @media screen and (min-width: 778px) and (max-width: 992px){
+            padding-top: 60px;
+        }
+        @media screen and (min-width: 320px) and (max-width: 767px){
+            padding-top: 40px;
+        }
+    }
+    .section-pb-80{
+        padding-bottom: 80px;
+        @media screen and (min-width: 778px) and (max-width: 992px){
+            padding-bottom: 60px;
+        }
+        @media screen and (min-width: 320px) and (max-width: 767px){
+            padding-bottom: 40px;
+        }
+    }
+    .section-pt-60{
+        padding-top: 60px;
+        @media screen and (min-width: 778px) and (max-width: 992px){
+            padding-top: 40px;
+        }
+        @media screen and (min-width: 320px) and (max-width: 767px){
+            padding-top: 20px;
+        }
+    }
+    .section-60{
+        padding-bottom: 60px;
+        @media screen and (min-width: 778px) and (max-width: 992px){
+            padding-bottom: 40px;
+        }
+        @media screen and (min-width: 320px) and (max-width: 767px){
+            padding-bottom: 20px;
+        }
+    }
+
+    // Gutter Y
+    .gy-120{
+        --bs-gutter-y:120px;
+    }
+    .gy-100{
+        --bs-gutter-y:100px;
+    }
+    .gy-50{
+        --bs-gutter-y:50px;
+    }
+    .gy-40{
+        --bs-gutter-y:40px;
+    }
+    .gy-36{
+        --bs-gutter-y:36px;
+    }
+    .gy-30{
+        --bs-gutter-y:30px;
+    }
+    .gy-24{
+        --bs-gutter-y:24px;
+    }
+    .gy-20{
+        --bs-gutter-y:20px;
+    }
+    .gy-10{
+        --bs-gutter-y:10px;
+    }
+    // Gutter X
+    .gx-50{
+        --bs-gutter-x:50px;
+    }
+    .gx-40{
+        --bs-gutter-x:40px;
+    }
+    .gx-36{
+        --bs-gutter-x:36px;
+    }
+    .gx-30{
+        --bs-gutter-x:30px;
+    }
+    .gx-20{
+        --bs-gutter-x:20px;
+    }
+    .gx-10{
+        --bs-gutter-x:10px;
+    }
+
+
+    $cols: 1,2,3,4,5,6,7,8,9,10,11,12;
+
+    @each $col in $cols {
+        @media (min-width: 468px) and (max-width: 575px) {
+            .col-xs-#{$col} {
+                flex: 0 0 auto;
+                width:calc(100% / 12 * $col);
+            }
+        }
+    }

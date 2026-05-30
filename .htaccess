@@ -1,0 +1,36 @@
+# Pastikan "DirectoryIndex" diatur ke index.php
+DirectoryIndex index.php
+
+# Mengaktifkan mod_rewrite
+RewriteEngine on
+
+# Redirect dari HTTP ke HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://floria.id/$1 [L,R=301]
+
+# Pengalihan dari www ke non-www
+RewriteCond %{HTTP_HOST} ^www\.floria\.id [NC]
+RewriteRule ^(.*)$ https://floria.id/$1 [L,R=301]
+
+# 🔁 Pengalihan URL khusus harus ditaruh di sini (sebelum aturan umum)
+# RewriteRule ^jasa/pembuatan-taman-jakarta/?$ /jasa/tukang-taman-jakarta [R=301,L]
+# RewriteRule ^jasa/pembuatan-taman-bekasi/?$ /jasa/tukang-taman-bekasi [R=301,L]
+# RewriteRule ^jasa/pembuatan-taman-depok/?$ /jasa/tukang-taman-depok [R=301,L]
+# RewriteRule ^jasa/pembuatan-taman-bogor/?$ /jasa/tukang-taman-bogor [R=301,L]
+# RewriteRule ^jasa/pembuatan-taman-tangerang/?$ /jasa/tukang-taman-tangerang [R=301,L]
+# RewriteRule ^jasa/pembuatan-taman-serang/?$ /jasa/tukang-taman-serang [R=301,L]
+# RewriteRule ^karangan-bunga/?$ /jual/karangan-bunga [R=301,L]
+# RewriteRule ^buket-bunga/?$ /jual/buket-bunga [R=301,L]
+
+# Kondisi pengecualian untuk file dan direktori tertentu
+RewriteCond $1 !^(index\.php|images|css|js|robots\.txt|favicon\.ico)
+RewriteCond $1 !^(index\.php|resources|robots\.txt)
+
+# Kondisi jika file yang diminta tidak ada
+RewriteCond %{REQUEST_FILENAME} !-f
+
+# Kondisi jika direktori yang diminta tidak ada
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Mengarahkan semua permintaan yang tidak ada ke index.php
+RewriteRule ^(.*)$ ./index.php?/$1 [L,QSA]

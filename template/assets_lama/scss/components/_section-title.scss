@@ -1,0 +1,219 @@
+@use "../utils" as *;
+/*----------------------------------------*/
+/* SECTION TITLE CSS START
+/*----------------------------------------*/
+
+.section-title-block {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 20px;
+
+  @include breakpoint(small) {
+    margin-bottom: 40px;
+  }
+
+  @include breakpoint(large) {
+    margin-bottom: 60px;
+  }
+
+  &__subtitle {
+    color: var(--cl-color-secondary);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 28px;
+    text-transform: capitalize;
+
+    @include breakpoint(small) {
+      font-size: 16px;
+    }
+
+    @include breakpoint(medium) {
+      font-size: 18px;
+    }
+
+    img {
+      width: 22px;
+    }
+  }
+
+  &__opacity-heading {
+    font-weight: 700;
+    line-height: 50px;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px var(--cl-color-jewel);
+    color: transparent;
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    z-index: -1;
+    opacity: 0.3;
+    width: 100%;
+    pointer-events: none;
+    transform: translate(-50%,-50%);
+    @include font-size(45px,90px, 100px, 140px);
+    @include breakpoint(medium) {
+      line-height: 90px;
+    }
+
+    @include breakpoint(large) {
+      line-height: 90px;
+      top: 50%;
+    }
+/* === Style 2 === */
+    &--style-2 {
+      top: 5%;
+     
+      @media (min-width: 992px){
+        top: 5%;
+        left: 54%;
+      }
+      @media (min-width: 1200px){
+        top: 15%;
+        left: 58%;
+      }
+      @media (min-width: 1600px){
+        top: 5%;
+        left: 59%;
+      }
+    }
+/* === Style 10 === */
+    &--style-10 {
+      top: 5%;
+      @media (min-width: 992px){
+        transform: translate(-50%,-50%);
+        top: 50%;
+        left: 50%;
+      }
+      @media (min-width: 1200px){
+        top: 15%;
+      }
+      @media (min-width: 1600px){
+        top: 5%;
+      }
+    }
+  }
+
+  &__heading {
+    position: relative;
+    color: var(--cl-color-bottle-green);
+    font-style: normal;
+    font-weight: var(--cl-fw-bold-1);
+    line-height:32px;
+    @include font-size(24px, 30px, 35px, 45px);
+
+    @media (min-width: 575px) {
+      line-height: 36px;
+    }
+
+    @media (min-width: 992px) {
+      line-height: 40px;
+    }
+
+    @media (min-width: 1200px) {
+      line-height: 55px;
+    }
+  }
+
+  &__text {
+    font-size: var(--cl-fz-text-2);
+    font-style: normal;
+    font-weight: var(--cl-fw-normal-1);
+    line-height: 24px;
+
+    @media (min-width: 768px) {
+      font-size: var(--cl-fz-text-1);
+      line-height: 26px;
+    }
+
+    @media (min-width: 1200px) {
+      margin-bottom: 60px;
+      line-height: 28px;
+    }
+
+    br {
+      display: none;
+
+      @include breakpoint(medium) {
+        display: block;
+      }
+    }
+
+    &--bold {
+      font-size: 14px;
+      line-height: 28px;
+      font-weight: 700;
+
+      @include breakpoint(small) {
+        font-size: 16px;
+      }
+
+      @include breakpoint(medium) {
+        font-size: 18px;
+      }
+    }
+  }
+
+  &__highlight-text {
+    color: var(--cl-color-primary);
+  }
+
+  &--center {
+    text-align: center;
+  }
+
+  &--dark {
+    .section-title-block__subtitle,
+    .section-title-block__heading,
+    .section-title-block__text {
+      color: var(--cl-color-white);
+    }
+  }
+
+  &__middle-shape {
+    width: 20%;
+    margin: 30px auto;
+
+    @media screen and (min-width: 767px) {
+      margin: 20px auto;
+    }
+
+    @media screen and (min-width: 992px) {
+      width: 100%;
+    }
+
+    @media screen and (min-width: 1200px) {
+      margin: 0 50%;
+      width: 45%;
+    }
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    &--style2 {
+      margin: 0;
+      height: 100px;
+      width: 90px;
+      position: absolute;
+      right: 0;
+      top: -40px;
+
+      @media screen and (min-width: 574px) {
+        right: 33%;
+        top: 35%;
+      }
+
+      @media screen and (min-width: 992px) {
+        right: 33%;
+        top: 20%;
+      }
+
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+}

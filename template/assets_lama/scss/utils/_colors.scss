@@ -1,0 +1,113 @@
+
+$grey-1: #F1F1F1;
+$grey-2: #F5F6F8;
+$white: #ffffff;
+$black: #000;
+$green-haze: #009961;
+$caribbean-green: #0ACF83;
+$bottle-green: #09331B;
+$dodger-blue: #1ABCFE;
+$english-holly: #021609;
+$maastricht-blue: #09152B;
+$alabaster: #EBF0E7;
+$jewel: #0E7A31;
+$dark-primary:#1bb27b;
+// Typography Colors
+$heading-1 : $bottle-green;
+$text-body : #6D756D;
+$review:#F7B401;
+$icon:#113007;
+$text-body2:#413533;
+$badge:#FFAB6C;
+$cart-remove:#F44336;
+$border-color:#E6F2F2;
+$colors: (
+    "grey-1"                      :   $grey-1,
+    "grey-2"                      :   $grey-2,
+    "white"                       :   $white,
+    "black"                       :   $black,
+    "primary"                     :   $green-haze,
+    "dark-primary"                :   $dark-primary,
+    "secondary"                   :   $bottle-green,
+    "bottle-green"                :   $bottle-green,
+    "caribbean-green"             :   $caribbean-green,
+    "dodger-blue"                 :   $dodger-blue,
+    "english-holly"               :   $english-holly,
+    "maastricht-blue"             :   $maastricht-blue,
+    "alabaster"                   :   $alabaster,
+    "jewel"                       :   $jewel,
+    "border-color"                :   $border-color,
+    // Typography Colors
+    "heading-1"                   :   $heading-1,
+    "text-body"                   :   $text-body,
+    "text-body2"                  :   $text-body2,
+    "yellow"                      :   $review,
+    "icon-black"                  :   $icon,
+    "badge"                       :   $badge,
+    "cart-remove"                 :   $cart-remove,
+);
+
+
+
+
+.section-bg-overylay{
+    &-1{
+        position: relative;
+        z-index: 1;
+        &::before {
+            content: "";
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(
+              90deg,
+              rgba(9, 51, 27, 0.5) 0%,
+              rgba(9, 51, 27, 0.8) 20%,
+              rgba(9, 51, 27, 0.64) 35.5%,
+              rgba(9, 51, 27, 0.51) 49%,
+              rgba(9, 51, 27, 0.41) 59%,
+              rgba(9, 51, 27, 0.28) 72.5%,
+              rgba(9, 51, 27, 0.09) 91.5%,
+              rgba(9, 51, 27, 0) 100%
+            );
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: inline-block;
+            z-index: -1;
+          }
+    }
+    &-2{
+        position: relative;
+        z-index: 1;
+        &::before {
+            content: "";
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(-270deg, #09331B 0%, rgba(9, 51, 27, 0) 100%);
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: inline-block;
+            z-index: -1;
+          }
+    }
+}
+
+.overlay-opacity{
+    &-95{
+       &::before{
+        opacity: 0.95 !important;
+       }
+       &::after{
+        opacity: 0.95 !important;
+       }
+    }
+    &-2{
+       &::before{
+        opacity: 0.2 !important;
+       }
+       &::after{
+        opacity: 0.2 !important;
+       }
+    }
+}

@@ -1,0 +1,85 @@
+@use "../utils" as *;
+/*----------------------------------------*/
+/*  PROJECT CSS START
+/*----------------------------------------*/
+.cl-project-block{
+    padding-top: 40px;
+    padding-bottom: 40px;
+    position: relative;
+    z-index: 1;
+    @include breakpoint(small){
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    @include breakpoint(large){
+        padding-top: 140px;
+        padding-bottom: 100px;
+    }
+    &::before{
+        content: "";
+        background-color: var(--cl-color-alabaster);
+        width: 100%;
+        height: 70%;
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    /* === Wrapper Style 2 === */
+    .project-wrapper--style-2{
+        margin-top: 50px; 
+    }
+    @media screen and (min-width: 574px){
+        .project-wrapper--style-2{
+            margin-top: 50px;
+        }
+    }
+    @media screen and (min-width: 768px){
+        padding-bottom: 60px;
+    }
+    @media screen and (min-width: 992px){
+        .project-wrapper--style-2{
+            margin-top: 100px;
+        }
+    }
+    @media screen and (min-width: 1200px){
+        padding-bottom: 120px;
+    }
+    &__shape-1 {
+        position: absolute;
+        top: -180px;
+        right: 5%;
+        width: 5.5%;
+        z-index: 3;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+      /* Section Title */
+      .section-title-block{
+        &__middle-shape{
+            margin: 0;
+                width: 23%;
+                margin: auto;
+            @media screen and (min-width: 479px){
+                margin-bottom: 0;
+            }
+            @media screen and (min-width: 992px){
+                width: 100%;       
+            } 
+        }
+      }
+      /* Project Slider Arrow */
+      .project-slider-arrow{
+        justify-content: center;
+        gap: 17px;
+        .project-slider-arrow__next-arrow, .project-slider-arrow__left-arrow {
+            margin-left: 0;
+        }
+        @media screen and (min-width: 992px){
+            justify-content: flex-end;  
+        }
+      }
+}

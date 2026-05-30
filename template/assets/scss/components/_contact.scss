@@ -1,0 +1,257 @@
+@use '../utils' as *;
+/*----------------------------------------*/
+/*  CONTACT CSS START
+/*----------------------------------------*/
+
+.cl-contact-block{
+    padding-top: 60px;
+    padding-bottom:60px;
+    @media screen and (min-width: 375px) {
+        padding-top:85px;
+      }
+    @media screen and (min-width: 768px){
+        padding-top:100px;
+        padding-bottom:80px;
+    }
+    @media screen and (min-width: 1200px){
+        padding-top: 135px;
+        padding-bottom: 120px;
+    }
+    .section-title-block__heading{
+        margin: 0;
+    }
+    &__image{
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        margin-bottom: 30px;
+        @media (min-width:768px) {
+            height: 711px;
+            width: 180%;
+            margin-bottom: 0;
+        }
+        @media (min-width:992px) {
+            width: 200%;
+        }
+        img{
+            height: 100%;
+            width: 100%;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+        
+    }
+    &__shape{
+        position: absolute;
+        top: -6%;
+        left: -6%;
+        width: 9%;
+        
+        @media (min-width: 768px) {
+            top: -9%;
+            left: -10%;
+            width: 14%;
+        }
+    }
+    .contact-area{
+        position: relative;
+        z-index: 1;
+        background-color: var(--cl-color-primary);
+        outline: 30px;
+        padding: 40px 30px;
+        border-radius: 10px;
+        @media (min-width: 768px) {
+            padding-left: 25%;
+        }
+        @media (min-width: 992px) {
+            padding-left: 32%;
+            padding-right: 30px;
+            padding-top: 100px;
+            padding-bottom: 100px;
+        }
+        @media (min-width: 1200px) {
+            padding-right: 77px;
+            padding-left: 36.4%;
+        }
+
+        .section-title-block{
+            margin-bottom: 20px;
+            text-align: center;
+            @media (min-width: 767px) {
+                text-align: initial;
+            }
+            @media (min-width: 992px) {
+                margin-bottom: 40px;
+            }
+        }
+        .contact-shape{
+            position: absolute;
+            right: -15%;
+            bottom: 0;
+            width: 40%;
+            @media screen and (min-width: 100px) and (max-width: 479px){
+               display: none;
+            }
+            @media screen and (min-width: 480px){
+                width: 30%;
+                right: 2%;
+                bottom: 2%;
+            }
+        }
+        /* === Style 2 === */
+        &--style-2{
+            .cl-contact-form{
+                input{
+                    border: 1px solid var(--cl-color-alabaster);
+                }
+            }
+        }
+    
+    }
+    &--inner-contact{
+        .contact-area{
+            padding: 20px;
+            background-color: var(--cl-color-alabaster);
+            @media screen and (min-width: 574px){
+                padding: 30px;
+            }
+            @media screen and (min-width: 768px){
+                padding: 40px;
+            }
+            @media screen and (min-width: 992px){
+                padding: 50px 30px;
+            }
+            @media screen and (min-width: 1200px){
+                padding: 70px;
+            }
+        }
+        .section-title-block__heading{
+            color: var(--cl-color-bottle-green);
+            text-transform: uppercase;
+            @include font-size(22px, 24px, 30px);
+        }
+        .cl-btn--secondary{
+            background-color: var(--cl-color-primary);
+        }
+        .footer__widget{
+            margin-top: 30px;
+            @media screen and (min-width: 768px){
+                margin-top: 40px;
+            }
+            @media screen and (min-width:992px){
+                margin-top: 50px;
+            }
+            i{
+                color:var(--cl-color-primary);
+                &:hover{
+                    color: var(--cl-color-bottle-green);
+                }
+            }
+            li{
+                cursor: pointer;
+                margin-bottom: 0px;
+                a{
+                    color: var(--cl-color-text-body);
+                    &:hover{
+                        color: var(--cl-color-primary);
+                    }
+                }
+            }
+            .footer__widget__title{
+                text-transform: uppercase;
+                margin-bottom: 26px;
+                @include font-size(16px, 18px, 22px);
+                @media screen and (min-width: 768px){
+                    margin-bottom: 28px;
+                }
+                @media screen and (min-width: 992px){
+                    margin-bottom:33px;
+                }
+            }
+        }
+    }
+    &__map{
+        overflow: hidden;
+        border-radius: 5px;
+        height: 100%;
+        iframe{
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+.cl-contact-form{
+    input,
+    textarea {
+    height: 50px;
+    padding:10px 15px;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 15px;
+    width: 100%;
+    font-size: var(--cl-fz-text-1);
+    font-weight: 400;
+    line-height: 28px;
+    color: var(--cl-color-primary);
+    &::placeholder{
+        color: var(--cl-color-text-body);
+    }
+    @media screen and (min-width: 574px){
+        height: 58px;
+        padding:10px 20px;
+        margin-bottom: 20px;
+    }
+    &:focus,
+    &:focus-visible{
+        outline: 1px solid var(--cl-color-secondary);
+    }
+    }
+    textarea {
+        min-height: 150px;
+        border-radius: 5px;
+        padding: 20px;
+        margin-bottom: 30px;
+        border: none;
+    }
+
+
+
+    .cl-btn{
+        @media screen and (min-width: 320px) and (max-width: 767px){
+            width: 100%;
+        }
+    }
+    .cl-btn--secondary{
+        &::before{
+            border-color: var(--cl-color-bottle-green);
+            background-color:var(--cl-color-bottle-green);
+        }
+        &:hover{
+            color: var(--cl-color-white);
+            background-color: var(--cl-color-bottle-green);
+            border-color: var(--cl-color-bottle-green);
+        }
+    }
+    &--inner-contact{
+        .cl-btn--secondary{
+            color: var(--cl-color-white);
+            &:hover{
+                background-color: var(--cl-color-bottle-green);
+            }
+        }
+    }
+    /* === Style 2 === */
+    &--style-2{
+        input,textarea{
+            border: 1px solid var(--cl-color-alabaster);
+        }
+        .cl-btn--secondary{
+            background-color: var(--cl-color-primary);
+            color: var(--cl-color-white);
+            &:hover{
+                background-color: var(--cl-color-bottle-green);
+            }
+        }
+    }
+}

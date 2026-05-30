@@ -1,0 +1,294 @@
+@use "../utils" as *;
+/*----------------------------------------*/
+/* PRICING TABLE CSS START
+/*----------------------------------------*/
+.pricing-table-section {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-image: url("../../../assets/images/png/home-2/pricing-table-bg.png");
+  background-color: var(--cl-color-alabaster);
+  @media (min-width: 768px) {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+  @media (min-width: 992px) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .section-title-block {
+    margin-bottom: 20px;
+    @media (min-width: 768px) {
+      margin-bottom: 40px;
+    }
+    @media (min-width: 992px) {
+      margin-bottom: 50px;
+    }
+    &__opacity-heading {
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  .pricing-table-cards {
+    .single-pt-card {
+      height: 100%;
+      padding: 25px 15px;
+      border-radius: 10px;
+      margin: 0 8px;
+      background-color: var(--cl-color-white);
+      transition: 0.6s;
+      position: relative;
+      box-shadow: 0px 4px 30px 0px rgba(2, 22, 9, 0.15);
+      z-index: 0;
+      @media screen and (min-width: 480px) {
+        padding: 35px 20px;
+      }
+      @media screen and (min-width: 992px) {
+        padding: 40px 25px;
+
+      }
+      @media screen and (min-width: 1200px) {
+        padding: 60px 40px;
+      }
+      &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        content: "";
+        background-image: url("../../../assets/images/png/home-2/pricing-table-bg-hover.png");
+        background-repeat: no-repeat;
+        background-position: bottom;
+        opacity: 0;
+        z-index: -1;
+      
+      }
+      &:hover {
+        background-color: var(--cl-color-primary);
+        &::before {
+          opacity: 1;
+          z-index: -1;
+        }
+        .single-pt-card__heading {
+          color: var(--cl-color-white);
+        }
+        .single-pt-card__price{
+          color: var(--cl-color-bottle-green);
+        }
+        .single-pt-card__list-heading{
+          color: var(--cl-color-bottle-green);
+        }
+        .single-pt-card__span {
+          color: var(--cl-color-alabaster);
+        }
+        .single-pt-card__button {
+          a{
+            background-color: var(--cl-color-bottle-green);
+          }
+        }
+        ul {
+          li {
+            color: var(--cl-color-alabaster);
+            svg {
+              path.vector{
+                fill: var(--cl-color-bottle-green);
+              }
+              path{
+                fill: var(--cl-color-white);
+              }
+            }
+          }
+        }
+      }
+      &__heading {
+        color: var(--cl-color-secondary);
+        text-align: center;
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 700;
+        margin-bottom: 10px;
+        @include font-size(23px, 28px, 26px, 30px);
+        @media screen and (min-width: 1200px) {
+          margin-bottom: 18px;
+        }
+      }
+      &__price {
+        text-align: center;
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: var(--cl-fw-bold-1);
+        line-height: 18px;
+        color: var(--cl-color-secondary);
+        margin-bottom: 20px;
+        @include font-size(16px, 18px, 22px);
+        @media screen and (min-width: 768px) {
+          margin-bottom: 28px;
+        }
+        @media screen and (min-width: 992px) {
+          margin-bottom: 35px;
+        }
+        @media screen and (min-width: 1400px) {
+          line-height: 30px;
+        }
+        @media screen and (min-width: 1600px) {
+          line-height: 32px;
+        }
+      }
+      &__span {
+        color: var(--cl-color-primary);
+        font-family: 'Roboto';
+        font-size: 12px;
+        font-style: normal;
+        font-weight: var(--cl-fw-normal-1);
+        line-height: 28px;
+      }
+      &__button {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+        @media screen and (min-width: 768px) {
+          margin-bottom: 28px;
+        }
+        @media screen and (min-width: 992px) {
+          margin-bottom: 32px;
+        }
+        @media screen and (min-width: 1200px) {
+          margin-bottom: 40px;
+        }
+        button {
+          text-transform: uppercase;
+        }
+      }
+      &__list-heading {
+        color: var(--cl-color-secondary);
+        margin-bottom: 16px;
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: var(--cl-fw-bold-1);
+        line-height: 28px;
+        @include font-size(14px, 16px, 18px);
+        @media screen and (min-width: 768px) {
+          margin-bottom: 18px;
+        }
+        @media screen and (min-width: 992px) {
+          margin-bottom: 10px;
+        }
+        @media screen and (min-width: 1200px) {
+          margin-bottom: 28px;
+        }
+      }
+      ul {
+        line-height: 28px;
+        li {
+          list-style: none;
+          color: var(--cl-color-text-2);
+          margin-bottom: 10px;
+          &:last-child{
+            margin-bottom: 0;
+          }
+          svg {
+            margin-right: 8px;
+            path#Vector{
+              fill: var(--cl-color-bottle-green);
+            }
+            path#Vector_2 {
+              fill: var(--cl-color-primary);
+            }
+          }
+        }
+        .border-none {
+          svg {
+            path#Vector{
+              fill: var(--cl-color-text-body);
+            }
+            path#Vector_2 {
+              fill: var(--cl-color-text-body);
+            }
+          }
+        }
+      }
+          @media screen and (min-width: 768px) {
+            margin: 0px 2px;
+            margin-bottom: 24px;
+        }
+        @media screen and (min-width: 992px) {
+          margin-bottom: 0;
+        }
+      
+    }
+  }
+  /* === Style 2 === */
+  &--style-2 {
+    background-image: none;
+    background-color: transparent;
+    .switch-wrapper {
+      position: relative;
+      display: inline-flex;
+      padding: 4px;
+      margin-bottom: 15px;
+      border-radius: 30px;
+      background: var(--cl-color-alabaster);
+    }
+    
+    .switch-wrapper [type="radio"] {
+      position: absolute;
+      left: -9999px;
+    }
+    
+    .switch-wrapper [type="radio"]:checked#monthly ~ label[for="monthly"],
+    .switch-wrapper [type="radio"]:checked#yearly ~ label[for="yearly"] {
+      color: var(--cl-color-white);
+    }
+    
+    .switch-wrapper [type="radio"]:checked#monthly ~ label[for="monthly"]:hover,
+    .switch-wrapper [type="radio"]:checked#yearly ~ label[for="yearly"]:hover {
+      background: transparent;
+    }
+    
+    .switch-wrapper
+      [type="radio"]:checked#monthly
+      + label[for="yearly"]
+      ~ .highlighter {
+      transform: none;
+    }
+    
+    .switch-wrapper
+      [type="radio"]:checked#yearly
+      + label[for="monthly"]
+      ~ .highlighter {
+      transform: translateX(100%);
+    }
+    
+    .switch-wrapper label {
+      font-size: 16px;
+      z-index: 1;
+      min-width: 100px;
+      line-height: 32px;
+      cursor: pointer;
+      border-radius: 30px;
+      transition: color 0.25s ease-in-out;
+      color: var(--cl-color-primary);
+      padding: 10px 0;
+      @media screen and (min-width: 768px) {
+        min-width: 142px;
+      }
+    }
+    
+    .switch-wrapper label:hover {
+      background: var(--lightgray);
+    }
+    
+    .switch-wrapper .highlighter {
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      width: calc(50% - 4px);
+      height: calc(100% - 8px);
+      border-radius: 30px;
+      background: var(--cl-color-primary);
+      transition: transform 0.25s ease-in-out;
+    }
+  }
+}

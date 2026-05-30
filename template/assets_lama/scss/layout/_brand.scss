@@ -1,0 +1,60 @@
+/*----------------------------------------*/
+/*  BRAND SECTION CSS START
+/*----------------------------------------*/
+.cl-brand-block{
+    background-image:url(../../../assets/images/jpg/home-1/brand-bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+    padding-top:60px;
+    padding-bottom:60px;
+    @media screen and (min-width: 768px){
+        padding-top:80px;
+        padding-bottom:80px;
+    }
+    @media screen and (min-width:1200px){
+        padding-top: 86px;
+        padding-bottom:86px;
+    }
+    &__wrapper{
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 30px;
+        row-gap: 50px;
+        justify-content: center;
+        color: #fff;
+        text-align: center;
+        @media screen and (min-width: 480px){
+            row-gap: 30px;
+            column-gap: 10px;
+        }
+        @media screen and (min-width: 574px){
+            row-gap: 25px;
+        }
+        @media screen and (min-width: 992px){
+            justify-content: space-between;
+            row-gap: 30px;
+        }
+    }
+    &__single{
+        flex: 0 0 calc(50% - 40px);
+        box-sizing: border-box;
+        @media screen and (min-width: 768px){
+            flex: 0 0 calc(33% - 40px);
+        }
+        @media screen and (min-width: 992px){
+            flex: 0 0 calc(20% - 100px);
+        }    
+        img{
+            width: 100%;
+        }
+    }
+     /* === Style 2 === */
+    &--style-2{
+        background-color: var(--cl-color-primary);
+        background-image: none;
+        
+    }
+}

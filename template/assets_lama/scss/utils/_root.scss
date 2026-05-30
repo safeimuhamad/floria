@@ -1,0 +1,57 @@
+@use 'typography' as typography;
+@use 'colors' as colors;
+
+:root {
+    /**
+     * @font family declaration
+     */
+     
+     @each $ff, $value in typography.$font-family {
+        --cl-ff-#{$ff}: #{$value};
+    }
+
+    @each $color-category, $color in colors.$colors {
+        $custom-property-name: "--cl-color-#{$color-category}";
+        #{$custom-property-name}: #{$color};
+      }
+    /**
+     * @color declaration
+     */
+
+      
+
+   /**
+     * @font weight declaration
+     */
+     @each $fw, $shades in typography.$font-scale {
+        @each $shade, $value in $shades {
+            $custom-property-name: "--cl-fw-#{$fw}-#{$shade}";
+            #{$custom-property-name}: #{$value};
+        }
+    }
+
+    /**
+     * @font size declaration
+     */
+    @each $fz, $shades in typography.$font-size {
+        @each $shade, $value in $shades {
+            $custom-property-name: "--cl-fz-#{$fz}-#{$shade}";
+            #{$custom-property-name}: #{$value};
+        }
+    }
+}
+// Global Color css
+@each $color-category, $color in colors.$colors {
+  $custom-property-name: "--cl-#{$color-category}";
+  // #{$custom-property-name}: #{$color};
+  
+  .cl-text-#{$color-category} {
+    color: #{$color};
+  }
+  .cl-btn--#{$color-category} {
+    background-color: #{$color};
+  }
+  .cl-bg-#{$color-category} {
+    background-color: #{$color};
+  }
+}

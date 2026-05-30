@@ -1,0 +1,12 @@
+@keyframes expandIcon {
+    0% {
+      opacity: 0;
+      visibility: hidden;
+      bottom: 10px;
+    }
+    100% {
+      opacity: 1;
+      visibility: visible;
+      bottom: 28px;
+    }
+  }

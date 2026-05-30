@@ -1,0 +1,204 @@
+@use '../utils' as *;
+/*----------------------------------------*/
+/* PROMO CSS START
+/*----------------------------------------*/
+.cl-promo-area{
+    position: relative;
+    overflow: hidden;
+    &__right-image{
+        position: absolute;
+        top: 45px;
+        right: 6%;
+        width: 11.2%;
+        z-index: -1;
+        @media screen and (min-width:480px){
+            top: 40px;
+            right: 11%;
+            width: 11%;
+        }     
+        @media screen and (min-width:574px){
+            width:5.1%;
+            right: 0%;
+        }       
+        @media screen and (min-width:992px){
+            right:5%;
+        }     
+        @media screen and (min-width:1200px){
+            right:0%;
+        }     
+        @media screen and (min-width:1400px){
+            top: 50px;
+            right: 3%;
+            width: 7.2%;
+        }     
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+    .promo-btn{
+        height: 40px;
+        @include font-size(14px, 16px, 16px);
+        &:hover{
+            background-color: var(--cl-color-primary);
+        }
+        @media screen and (min-width:468px){
+            
+        }
+        @media screen and (min-width: 767px){
+            height: 45px;
+        }
+        @media screen and (min-width: 992px){
+            
+        }
+        @media screen and (min-width:1200px){
+            height: 55px;
+        }
+    }
+    &__body{
+        position: relative;
+        padding: 23px 15px 23px;
+        display: flex;
+        flex-direction: column;
+        &__bg-shape{
+            position: absolute;
+            left: -37%;
+            top: 0;
+            width: 260px;
+            height: 100%;
+            z-index: 2;
+            @media screen and (min-width:468px){
+                left: -25%;
+            }
+            @media screen and (min-width: 574px){
+                left: 0;
+            }
+            @media screen and (min-width: 992px){
+                left: 15%;
+            }
+            @media screen and (min-width:1200px){
+                left: 10%;
+            }
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: 100%;
+            }
+        }
+        &::after{
+            content: "";
+            background-color: var(--cl-color-secondary);
+            width: 80%;
+            height: 100%;
+            position: absolute;
+            right: 0;
+            top: 0;
+            z-index: -1;
+        }
+        &__left-image{
+            position: absolute;
+            left: -50%;
+            top: 0;
+            z-index: 1;
+            height: 100%;
+            width: 100%;  
+            object-position: center;   
+            z-index: -1; 
+            img{
+                height: 100%;
+                width: 100%; 
+                object-fit: cover;
+                @media screen and (min-width: 767px){
+                    object-fit: contain;
+                }       
+            }
+            @media screen and (min-width: 992px){
+                z-index: 1;
+            }
+            @media screen and (min-width: 1200px){
+                left: -51%;
+                z-index: -1;
+            }
+        }
+        @media screen and (min-width: 574px){
+            flex-direction: initial;
+            margin-top: 0;
+        }
+
+        &__content{
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            @include breakpoint(small){
+                width: 90%;
+            }
+            @include breakpoint(medium){
+                width: 80%;
+                padding-top: 40px;
+                padding-bottom: 40px;
+            }
+            &__heading{
+                color: var(--cl-color-white);
+                font-family: var(--cl-ff-heading);
+                font-size: 22px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 26px;
+                margin-bottom: 10px;
+                font-size: 30px;
+                font-weight: 700;
+                @include font-size(25px, 25px, 30px);
+                @media screen and (min-width:374px){
+                    line-height:30px;
+                }
+                @media screen and (min-width:480px){
+                    margin-bottom: 15px;
+                }
+                @include breakpoint(small){
+                    margin-bottom: 0;
+                }
+                @include breakpoint(large){
+                    line-height: 40px;
+                }
+                br{
+                    display: none;
+                    @media screen and (min-width:480px){
+                        display: block;
+                    }
+                }
+            }
+        }
+
+        svg{
+            position: absolute;
+            right: 175px;
+            height: 60px;
+            @media screen and (min-width:480px){
+                top: 50px;
+                right: 335px;
+            }     
+            @media screen and (min-width:574px){
+                top: 14px;
+                right:260px;
+                height: 80px;
+            }     
+            @media screen and (min-width:767px){
+                top: 14px;
+                right: 362px;
+            }     
+            @media screen and (min-width:1200px){
+                top: 15px;
+                right: 400px;
+            }     
+            @media screen and (min-width:1400px){
+                top:13px;
+            }     
+        }
+
+
+    }
+
+}
